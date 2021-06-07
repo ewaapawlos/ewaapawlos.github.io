@@ -40,6 +40,17 @@ $(document).ready(function () {
         version : '1.1.1'
         }),
          
+        lyrMAZ = L.tileLayer.wms("http://localhost:8095/geoserver/projekt_PG/wms", 
+        {
+        layers: "projekt_PG:mazowieckie", 
+        format: 'image/png', 
+        transparent : 'true', 
+        version : '1.1.1'
+        });
+    mymap.addLayer(lyrPRG);
+
+
+
     mymap.addLayer(lyrOSM);
 
     var baseMaps = {
@@ -50,6 +61,7 @@ $(document).ready(function () {
         "Google Hybrid":lyrGoogleHyb,
         "Google Satellite":lyrGoogleSat,
         "Google Road":lyrGoogleR,
+        "Mazowieckie":lyrMAZ,
       };
      
       var overlays = {
